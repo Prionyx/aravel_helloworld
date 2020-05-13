@@ -42,7 +42,7 @@
                             <th>@lang('Creation')<span id="created_at" class="fa fa-sort-desc pull-right"
                                                        aria-hidden="true"></span></th>
                             <th></th>
-{{--                            <th></th>--}}
+                            <th></th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -56,7 +56,7 @@
                             <th>@lang('Confirmed')</th>
                             <th>@lang('Creation')</th>
                             <th></th>
-{{--                            <th></th>--}}
+                            <th></th>
                         </tr>
                         </tfoot>
                         <tbody id="pannel">
@@ -76,4 +76,36 @@
     </div>
     <!-- /.row -->
 
+@endsection
+
+@section('js')
+    <script>
+        var user = (function () {
+            var onReady = function () {
+                $('#pannel').on('click', 'td a.btn-danger', function (event) {
+                    const rowId = $(this).closest('tr').attr('id');
+                    const userId = rowId.replace('user_', '');
+                    const url = "{{ route('users.destroy', ':userId') }}".replace(':userId', userId);
+                    $.ajax({
+                        url: url,
+                        type:'DELETE',
+                        data: {_token:'{{ csrf_token() }}', user:userId},
+                        success: function(data){
+                            $('#pannel').html(data);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("AJAX error: " + error);
+                        }
+                    });
+                })
+            }
+
+            return {
+                onReady: onReady
+            }
+
+        })()
+
+        $(document).ready(user.onReady)
+    </script>
 @endsection

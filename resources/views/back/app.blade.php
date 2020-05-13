@@ -103,5 +103,13 @@
             </main>
         </div>
     </div>
+
+    <!-- jQuery 3.2.0 -->
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.js"></script>
+
+    @yield('js')
+
 </body>
 </html>

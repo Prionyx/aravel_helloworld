@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserUpadateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\User;
 
@@ -53,5 +52,20 @@ class UsersController extends Controller
         $user->update($request->all());
 
         return back()->with('user-updated', __('The user has been successfully updated'));
+    }
+
+    /**
+     * Remove the user from storage.
+     *
+     * @param User $user
+     * @return \Illuminate\Http\Response
+     * @throws \Exception
+     */
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return view('back.users.table', ['users' => User::all()]);
+        return response()->json();
     }
 }
