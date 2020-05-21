@@ -25,7 +25,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(5);
         return view('back.users', ['users' => $users]);
     }
 
@@ -66,6 +66,5 @@ class UsersController extends Controller
         $user->delete();
 
         return view('back.users.table', ['users' => User::all()]);
-        return response()->json();
     }
 }

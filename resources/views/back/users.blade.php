@@ -66,8 +66,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div id="pagination" class="box-footer">
-{{--                    TODO: Add pagination--}}
-{{--                    {{ $links }}--}}
+                    {{ $users->links() }}
                 </div>
             </div>
             <!-- /.box -->
