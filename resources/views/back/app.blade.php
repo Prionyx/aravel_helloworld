@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel Hello World') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -85,6 +85,10 @@
                       'icon' => 'user',
                       'item' => 'users',
                     ])
+                    @include('back.treeview', [
+                      'icon' => 'file-text',
+                      'item' => 'posts',
+                    ])
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -97,10 +101,6 @@
             <section class="content">
                 @yield('main')
             </section>
-            <!-- /.content -->
-            <main class="py-4">
-                @yield('content')
-            </main>
         </div>
     </div>
 

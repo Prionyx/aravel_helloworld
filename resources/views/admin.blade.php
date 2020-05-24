@@ -1,24 +1,6 @@
-@extends('layouts.app')
+@extends('back.app')
 
-<aside class="main-sidebar">
-    <section class="sidebar">
-        <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
-            <!-- Optionally, you can add icons to the links -->
-            <li>
-                <a href="{{ route('admin') }}"><i class="fa fa-fw fa-dashboard"></i> <span>@lang('Administration panel')</span></a>
-            </li>
-            @include('back.treeview', [
-              'icon' => 'user',
-              'item' => 'users',
-            ])
-        </ul>
-        <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-</aside>
-
-@section('content')
+@section('main')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
