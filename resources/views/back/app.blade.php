@@ -36,7 +36,11 @@
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Admin panel</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="{{ route('admin') }}"><i class="fa fa-fw fa-dashboard"></i> <span>@lang('Dashboard')</span></a>
+                        <a href="{{ route('admin') }}"><i class="fa fa-fw fa-dashboard"></i> <span>@lang('Dashboard')</span>
+                            <span class="pull-right-container">
+                                <span class="fa fa-angle-left pull-right"></span>
+                            </span>
+                        </a>
                     </li>
                     @include('back.treeview', [
                       'icon' => 'user',
@@ -66,7 +70,7 @@
                     <i class="fa fa-align-justify"></i>
                 </button>
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
+                    <i class="fa fa-align-right"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -82,12 +82,12 @@
             var onReady = function () {
                 $('#pannel').on('click', 'td a.btn-danger', function (event) {
                     const rowId = $(this).closest('tr').attr('id');
-                    const userId = rowId.replace('user_', '');
-                    const url = "{{ route('users.destroy', ':userId') }}".replace(':userId', userId);
+                    const postId = rowId.replace('post_', '');
+                    const url = "{{ route('posts.destroy', ':postId') }}".replace(':postId', postId);
                     $.ajax({
                         url: url,
                         type:'DELETE',
-                        data: {_token:'{{ csrf_token() }}', user:userId},
+                        data: {_token:'{{ csrf_token() }}', user:postId},
                         success: function(data){
                             $('#pannel').html(data);
                         },

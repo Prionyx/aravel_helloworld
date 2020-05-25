@@ -65,6 +65,6 @@ class UsersController extends Controller
     {
         $user->delete();
 
-        return view('back.users.table', ['users' => User::all()]);
+        return view('back.users.table', ['users' => User::paginate(5)]);
     }
 }

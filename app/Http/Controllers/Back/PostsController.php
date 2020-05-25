@@ -60,7 +60,7 @@ class PostsController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        $this->repository->update($post, $request);
+        $post->update($request->all());
 
         return back()->with('post-ok', __('The post has been successfully updated'));
     }
@@ -73,10 +73,8 @@ class PostsController extends Controller
      */
     public function destroy(Post $post)
     {
-        $this->authorize('manage', $post);
+        $post->delete();
 
-        $post->delete ();
-
-        return response ()->json ();
+        return view('back.posts.table', ['posts' => Post::paginate(5)]);
     }
 }
