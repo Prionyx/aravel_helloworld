@@ -34,39 +34,6 @@
                             <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $user->email) }}" required>
                             {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                         </div>
-                        <div class="form-group">
-                            <label for="role">@lang('Role')</label>
-                            <select class="form-control" name="role" id="role">
-                                <option value="admin" {{ old('role', $user->role) === 'admin' ? 'selected' : '' }}>@lang('Administrator')</option>
-                                <option value="redac" {{ old('role', $user->role) === 'redac' ? 'selected' : '' }}>@lang('Redactor')</option>
-                                <option value="user" {{ old('role', $user->role) === 'user' ? 'selected' : '' }}>@lang('User')</option>
-                            </select>
-                        </div>
-                        @if ($user->ingoing)
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="new" checked> @lang('New')
-                                </label>
-                            </div>
-                        @endif
-                        @if ($user->confirmed)
-                            <p><span class="badge bg-green">@lang('Confirmed')</span></p>
-                        @else
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="confirmed" {{ old('confirmed') ? 'checked' : ''}}> @lang('Confirmed')
-                                </label>
-                            </div>
-                        @endif
-                        @if ($user->valid)
-                            <p><span class="badge bg-green">@lang('Valid')</span></p>
-                        @else
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="valid" {{ old('valid') ? 'checked' : ''}}> @lang('Valid')
-                                </label>
-                            </div>
-                        @endif
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">

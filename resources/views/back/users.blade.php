@@ -13,18 +13,6 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box">
-                <div class="box-header with-border">
-                    <strong>@lang('Roles') :</strong> &nbsp;
-                    <input type="radio" name="role" value="all" checked> @lang('All')&nbsp;
-                    <input type="radio" name="role" value="admin"> @lang('Administrator')&nbsp;
-                    <input type="radio" name="role" value="redac"> @lang('Redactor')&nbsp;
-                    <input type="radio" name="role" value="user"> @lang('User')&nbsp;<br>
-                    <strong>@lang('Status') :</strong> &nbsp;
-                    <input type="checkbox" name="new" @if(request()->new) checked @endif> @lang('New')&nbsp;
-                    <input type="checkbox" name="valid"> @lang('Valid')&nbsp;
-                    <input type="checkbox" name="confirmed"> @lang('Confirmed')
-                    <div id="spinner" class="text-center"></div>
-                </div>
                 <div class="box-body table-responsive">
                     <table id="users" class="table table-striped table-bordered">
                         <thead>
@@ -34,11 +22,6 @@
                                                    aria-hidden="true"></span></th>
                             <th>@lang('Email')<span id="email" class="fa fa-sort pull-right"
                                                     aria-hidden="true"></span></th>
-                            <th>@lang('Role')<span id="role" class="fa fa-sort pull-right"
-                                                   aria-hidden="true"></span></th>
-                            <th>@lang('New')</th>
-                            <th>@lang('Valid')</th>
-                            <th>@lang('Confirmed')</th>
                             <th>@lang('Creation')<span id="created_at" class="fa fa-sort-desc pull-right"
                                                        aria-hidden="true"></span></th>
                             <th></th>
@@ -50,10 +33,6 @@
                             <th>#</th>
                             <th>@lang('Name')</th>
                             <th>@lang('Email')</th>
-                            <th>@lang('Role')</th>
-                            <th>@lang('New')</th>
-                            <th>@lang('Valid')</th>
-                            <th>@lang('Confirmed')</th>
                             <th>@lang('Creation')</th>
                             <th></th>
                             <th></th>
