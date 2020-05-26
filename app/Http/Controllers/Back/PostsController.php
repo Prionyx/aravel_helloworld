@@ -60,6 +60,10 @@ class PostsController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
+        $request->input('active') === 'on'
+            ? $request->merge(['active' => true])
+            : $request->merge(['active' => false]);
+
         $post->update($request->all());
 
         return back()->with('post-ok', __('The post has been successfully updated'));
